@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
 import { InputStyled } from './input.style'
 
-interface IInputProps {
+export interface IInputProps {
   label: string
   placeholder?: string
   fieldType?: 'text' | 'number'
-  value: string
-  handleChange: (newValue: string) => void
+  value: string | number
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   children?: never
 }
 
@@ -24,7 +24,7 @@ export const Input: FC<IInputProps> = ({
         type={fieldType}
         placeholder={placeholder}
         value={value}
-        onChange={(event) => handleChange(event.target.value)}
+        onChange={(event) => handleChange(event)}
       />
     </InputStyled>
   )

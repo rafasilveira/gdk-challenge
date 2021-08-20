@@ -5,3 +5,5 @@ export interface IPayment {
   description: string
   id: number
 }
+
+export type INewPayment = Omit<IPayment, 'id'>
