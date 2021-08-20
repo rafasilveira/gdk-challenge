@@ -10,7 +10,7 @@ export const PaymentItemStyled = styled.div`
   border-radius: 4px;
   margin-bottom: 1rem;
 
-  label {
+  & > span {
     font-weight: 700;
     margin-bottom: .5rem;
     display: block;

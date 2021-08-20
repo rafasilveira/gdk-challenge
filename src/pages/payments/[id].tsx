@@ -1,11 +1,11 @@
 import { useRouter } from 'next/dist/client/router'
 import Link from 'next/link'
-import { useMemo } from 'react'
+import { FC, useMemo } from 'react'
 import { Button, Container, Header } from '../../components'
 import { PaymentItem } from '../../components/payment-item/payment-item.component'
 import { usePaymentsContext } from '../../store/payments.context'
 
-export default function Payment() {
+export const Payment: FC<{ children?: never }> = () => {
   const router = useRouter()
   const { id } = router.query
 
@@ -39,9 +39,14 @@ export default function Payment() {
             <Link href="/">
               <Button>Voltar</Button>
             </Link>
+            <Link href="/payments/new">
+              <Button>Adicionar novo</Button>
+            </Link>
           </div>
         </Container>
       </main>
     </>
   )
 }
+
+export default Payment

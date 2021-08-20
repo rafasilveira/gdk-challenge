@@ -5,7 +5,7 @@ export const PaymentItem: FC<{
   label: string
 }> = ({ label, children }) => (
   <PaymentItemStyled>
-    <label>{label}</label>
+    <span>{label}</span>
     {children}
   </PaymentItemStyled>
 )
