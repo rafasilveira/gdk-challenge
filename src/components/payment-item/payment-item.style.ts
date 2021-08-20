@@ -8,17 +8,12 @@ export const PaymentItemStyled = styled.div`
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.125);
   border-radius: 4px;
+  margin-bottom: 1rem;
 
   label {
     font-weight: 700;
-  }
-  p {
-    font-size: 1.25rem;
-    margin-top: 0.5rem;
-  }
-
-  && {
-    margin-top: 1rem;
+    margin-bottom: .5rem;
+    display: block;
   }
 
   &:last-child {

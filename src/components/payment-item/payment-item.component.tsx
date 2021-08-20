@@ -3,11 +3,9 @@ import { PaymentItemStyled } from './payment-item.style'
 
 export const PaymentItem: FC<{
   label: string
-  text: string
-  children?: never
-}> = ({ label, text }) => (
+}> = ({ label, children }) => (
   <PaymentItemStyled>
     <label>{label}</label>
-    <p>{text}</p>
+    {children}
   </PaymentItemStyled>
 )

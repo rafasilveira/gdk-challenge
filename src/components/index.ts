@@ -1,3 +1,5 @@
-export { Table } from './table/table.component'
+export { ButtonStyled as Button } from './button/button.style'
 export { ContainerStyled as Container } from './container/container.style'
 export { Header } from './header/header.component'
+export { PaymentItem } from './payment-item/payment-item.component'
+export { Table } from './table/table.component'

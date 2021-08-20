@@ -3,7 +3,7 @@ import { Container, Table, Header } from '../components'
 export default function Home() {
   return (
     <>
-      <Header title={'Payments'} />
+      <Header title={'Pagamentos'} />
 
       <main>
         <Container>

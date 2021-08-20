@@ -3,6 +3,7 @@ import { ContainerStyled } from '../container/container.style'
 import { HeaderStyled } from './header.style'
 import Link from 'next/link'
 import Head from 'next/head'
+import { Button } from '..'
 
 export const Header: FC<{ children?: never; title: string }> = ({ title }) => {
   return (
@@ -21,15 +22,12 @@ export const Header: FC<{ children?: never; title: string }> = ({ title }) => {
             </Link>
 
             <div className="buttons">
-              <a
-                target="_blank"
-                href="https://github.com/rafasilveira/gdk-challenge"
-              >
+              <Button target="_blank" href="https://github.com/rafasilveira/gdk-challenge">
                 Github
-              </a>
-              <a target="_blank" href="mailto:rafaelbs159@gmail.com">
-                Contact me
-              </a>
+              </Button>
+              <Button target="_blank" href="mailto:rafaelbs159@gmail.com">
+                Contato
+              </Button>
             </div>
           </div>
         </ContainerStyled>
