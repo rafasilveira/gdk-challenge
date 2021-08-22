@@ -11,7 +11,7 @@ export const Payment: FC<{ children?: never }> = () => {
 
   const { payments, paymentsLoading } = usePaymentsContext()
   const payment = useMemo(
-    () => payments?.filter((p) => p.id === Number(id))?.[0] ?? null,
+    () => payments?.filter((p) => p.id === id)?.[0] ?? null,
     [payments]
   )
 
