@@ -3,7 +3,7 @@ export interface IPayment {
   customer: string
   amount: number
   description: string
-  id: number
+  id: string
 }
 
 export type INewPayment = Omit<IPayment, 'id'>

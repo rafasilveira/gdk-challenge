@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { FC, useState } from 'react'
 import { Button, Container, Header, IInputProps, Input, PaymentItem } from '../../components'
 import { INewPayment } from '../../interfaces/payment.interface'
+import { addPayment } from '../../store/add-payment.request'
 
 type DataField = IInputProps & { key: string }
 
@@ -17,6 +18,24 @@ export const NewPayment: FC<{ children?: never }> = () => {
     setValues({
       ...values,
       [key]: event.target.value
+    })
+  }
+
+  const handleSubmit = () => {
+    Object.entries(values).forEach(([key, value]) => {
+      if (!value) {
+        console.log(`error: key ${key} is empty`)
+        return
+      }
+    })
+
+    addPayment(values).then((res) => {
+      setValues({
+        business: '',
+        customer: '',
+        amount: 0,
+        description: ''
+      })
     })
   }
 
@@ -73,7 +92,7 @@ export const NewPayment: FC<{ children?: never }> = () => {
             <Link href="/">
               <Button>Voltar</Button>
             </Link>
-            <Button onClick={() => console.log(values)}>Adicionar</Button>
+            <Button onClick={() => handleSubmit()}>Adicionar</Button>
           </div>
         </Container>
       </main>
