@@ -18,4 +18,18 @@ export const HeaderStyled = styled.header`
       letter-spacing: 0.02em;
     }
   }
+
+  @media only screen and (max-width: 1000px) {
+    margin: 0 auto 1rem;
+    .content {
+      padding: 0.5rem 0;
+      flex-direction: column;
+      h1 {
+        font-size: 1.25rem;
+      }
+      .buttons {
+        display: none;
+      }
+    }
+  }
 `

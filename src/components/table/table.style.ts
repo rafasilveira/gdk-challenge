@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
 export const TableStyled = styled.div`
+  overflow-x: auto;
   .header,
   .body .row {
     display: grid;
-    grid-template-columns: 0.5fr 2fr 2fr 1fr 5fr;
+    grid-template-columns: 250px 180px 180px 90px 1fr;
     gap: 2px;
 
     & > div {
@@ -22,9 +23,9 @@ export const TableStyled = styled.div`
 
   .header,
   .body {
+    min-width: 800px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
     border-radius: 2px;
-    overflow: hidden;
   }
 
   .row {
@@ -32,8 +33,7 @@ export const TableStyled = styled.div`
     transition: all 0.25s;
     cursor: pointer;
 
-    & + .row {
-      /* margin-top: .25rem; */
+    &:nth-child(even) {
       background: #fff;
     }
 

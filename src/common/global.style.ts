@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     background: #fafafa;
     font-family: 'Montserrat', sans-serif;
     transition: color .25s linear, background .3s ease-in-out;
+    padding-bottom: 0.5rem;
   }
   a {
     color: currentColor;
