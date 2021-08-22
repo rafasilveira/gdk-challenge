@@ -24,6 +24,7 @@ export const connectToDatabase = async (): Promise<IDatabaseConnection> => {
   }
 
   const client = await MongoClient.connect(uri, {
+    /** @ts-ignore */
     useNewUrlParser: true,
     useUnifiedTopology: true
   }).then((client) => client)

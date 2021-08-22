@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { FC, useState } from 'react'
+import { toast } from 'react-toastify'
 import { Button, Container, Header, IInputProps, Input, PaymentItem } from '../../components'
 import { INewPayment } from '../../interfaces/payment.interface'
 import { addPayment } from '../../store/add-payment.request'
@@ -24,12 +25,14 @@ export const NewPayment: FC<{ children?: never }> = () => {
   const handleSubmit = () => {
     Object.entries(values).forEach(([key, value]) => {
       if (!value) {
-        console.log(`error: key ${key} is empty`)
+        toast.error(`Preencha o campo ${key}`, { autoClose: 5000 })
         return
       }
     })
 
+    toast.info('Adicionando pagamento', { autoClose: 5000 })
     addPayment(values).then((res) => {
+      toast.success('Pagamento adicionado com sucesso!', { autoClose: 5000 })
       setValues({
         business: '',
         customer: '',
